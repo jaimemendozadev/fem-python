@@ -31,9 +31,12 @@
 - [Dictionaries](#dictionaries)
   - [Adding, Removing, Accessing Keys or Values](#adding-removing-accessing-keys-or-values)
 
+  - [Looping Over Dictionaries](#looping-over-dictionaries)
+
 - [Boolean Logic](#boolean-logic)
   - [Comparisons](#comparisons)
   - [and, or, & not](#and-or-&-not)
+  - [Control Flow](#control-flow)
 
 - [Loops and Control Statements](#loops-and-control-statements)
 
@@ -1209,10 +1212,142 @@ False
 
 # Loops and Control Statements
 
+<strong>IMPORTANT</strong>: 
+  - the `for in` loop is not a function, so there's no scope. So the variable `color` will exist in your scope as the last color it was set to.
+
+  - Just like functions, indentation defines what belongs to the for loop.
+
+```
+colors = ["Red", "Green", "Blue", "Orange"]
+
+>>> for color in colors:
+...     print(f"the current color is {color}")
+...
+the current color is Red
+the current color is Green
+the current color is Blue
+the current color is Orange
+
+```
+
+
+If you want to go through a sequence of numbers, you can use `range()`
+
+```
+
+# range() is exclusive
+
+>>> list(range(5))
+[0, 1, 2, 3, 4]
+
+>>> for num in range(5):
+...     print(f"The current num is {num}")
+...
+The current num is 0
+The current num is 1
+The current num is 2
+The current num is 3
+The current num is 4
+
+```
+
+
+The first arg to `range()` is where to start, the second is where to end. The second argument is exclusive:
+
+```
+
+>>> list(range(1, 5))
+[1, 2, 3, 4]
+
+
+```
+
+
+You can also pass a third argument to `range()`.
+
+```
+>>> for num in range(1, 11, 2):
+...     print(f"the current num is {num}")
+...
+the current num is 1
+the current num is 3
+the current num is 5
+the current num is 7
+the current num is 9
+
+```
+
+
+
 
 [[↑] Back to top](#table-of-contents)
 
 
+# Looping Over Dictionaries
+
+Looping over dictionaries only gives you the key:
+```
+>>> hex_colors = {"Red": "#FF", "Green": "#008"}
+>>> for key in hex_colors:
+...     print(f"the current key is {key}")
+...
+the current key is Red
+the current key is Green
+
+```
+
+Use the key in the for loop to access the dictionary value:
+
+```
+>>> for key in hex_colors:
+...     print(f"the current color is {hex_colors[key]}")
+...
+the current color is #FF
+the current color is #008
+
+```
+
+
+To loop over the keys and values in the dictionary at once, use the `.items()` to get the list of tuples, and then unpack them:
+
+```
+>>> hex_colors.items()
+
+dict_items([('Red', '#FF'), ('Green', '#008')])
+
+>>> for color, hex_code in hex_colors.items():
+...     print(f"the color {color} has a hex code of {hex_code}")
+...
+the color Red has a hex code of #FF
+the color Green has a hex code of #008
+
+
+```
+
+
+`enumerate()`: passing a list argument gives you a list of tuples
+
+```
+>>> colors_list
+['Red', 'Green', 'Blue']
+
+>>> for i, color in enumerate(colors_list):
+...     print(f"the index is {i} and the color is {color}")
+...
+the index is 0 and the color is Red
+the index is 1 and the color is Green
+the index is 2 and the color is Blue
+
+```
+
+
+[[↑] Back to top](#table-of-contents)
+
+
+# Control Flow
+
+
+[[↑] Back to top](#table-of-contents)
 
 # Useful Methods
 - print()
