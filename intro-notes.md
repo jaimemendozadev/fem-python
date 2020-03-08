@@ -39,6 +39,7 @@
   - [Control Flow](#control-flow)
 
 - [Loops and Control Statements](#loops-and-control-statements)
+  - [Looping Over Dictionaries](#looping-over-dictionaries)
 
 - [Useful Methods](#useful-methods)
 -[Additional Notes](#additional-notes)
@@ -66,6 +67,7 @@ In Python, None is null
 
 Integers
 --------
+```
 x = 4 
 y = -3938
 z = 0
@@ -73,7 +75,7 @@ x = 5.0
 y = -3484.5
 
 x = 42j //j is a complex number
-
+```
 
 
 In Python, integers and simple data types are objects under the hood. That means you can just create new ones by calling the methods associated with their types.
@@ -84,11 +86,11 @@ In Python, integers and simple data types are objects under the hood. That means
 
 Float
 -----
-
+```
 x = 5.0
 y = -3484.5
 z = 0.0
-
+```
 
 In Python, integers and simple data types are objects under the hood. So you can just create new ones by calling the methods associated with their types.
 
